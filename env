@@ -14,15 +14,13 @@
 # ENVIRONMENT
 #--------------------------------------------------------------------
 
-CI_ENVIRONMENT = development # notifies of application observations in mode development
-
-# CI_ENVIRONMENT = production
+CI_ENVIRONMENT = development
 
 #--------------------------------------------------------------------
 # APP
 #--------------------------------------------------------------------
 
-app.baseURL = 'http://localhost:8080' # editado
+app.baseURL = 'http://localhost:8081' # editado
 # If you have trouble with `.`, you could also use `_`.
 # app_baseURL = ''
 # app.forceGlobalSecureRequests = false
@@ -32,11 +30,11 @@ app.baseURL = 'http://localhost:8080' # editado
 # DATABASE
 #--------------------------------------------------------------------
 
-# database.default.hostname = localhost
-# database.default.database = ci4
-# database.default.username = root
-# database.default.password = root
-# database.default.DBDriver = MySQLi
+ database.default.hostname = localhost
+ database.default.database = teste
+ database.default.username = root
+ database.default.password = ''
+ database.default.DBDriver = MySQLi
 # database.default.DBPrefix =
 # database.default.port = 3306
 
