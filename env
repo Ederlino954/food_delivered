@@ -31,7 +31,7 @@ app.baseURL = 'http://localhost:8080' # editado
 #--------------------------------------------------------------------
 
  database.default.hostname = localhost
- database.default.database = teste
+ database.default.database = food
  database.default.username = root
  database.default.password = ''
  database.default.DBDriver = MySQLi

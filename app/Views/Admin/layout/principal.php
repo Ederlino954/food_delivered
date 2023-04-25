@@ -238,15 +238,13 @@
       </nav>
       <!-- partial -->
       <div class="main-panel">
-        <div class="content-wrapper">     
-          
+        <div class="content-wrapper">          
 
 
           <!-- render dos estilos especificos -->
-          <?php echo $this->renderSection('conteudo') ?>
-        
+          <?php echo $this->renderSection('conteudo') ?>   
 
-
+          
 
         </div>
         <!-- content-wrapper ends -->
