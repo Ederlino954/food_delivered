@@ -17,11 +17,14 @@ class Usuarios extends BaseController
 
     public function index()
     {
-        
-        $usuarios = $this->usuarioModel->findAll();
+        $data = [
 
-        // dd($usuarios);
-        var_dump($usuarios);
+            'titulo' => 'Usuarios',
+            'usuarios' => $this->usuarioModel->findAll(),
+
+        ];
+        
+        return view('Admin/Usuarios/Index', $data);
 
     }
 
