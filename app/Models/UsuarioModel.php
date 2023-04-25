@@ -6,7 +6,7 @@ use CodeIgniter\Model;
 
 class UsuarioModel extends Model
 {
-   
+    protected $useTimestamps    = true;
     protected $table            = 'usuarios';
     protected $returnType       = 'object';
     protected $useSoftDeletes   = true;   
