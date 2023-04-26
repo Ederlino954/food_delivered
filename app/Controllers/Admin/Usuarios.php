@@ -28,6 +28,17 @@ class Usuarios extends BaseController
 
     }
 
-    
+    public function procurar(){
+
+        if (!$this->request->isAJAX()) {
+            
+            exit("Página não encontrada!");
+        }
+
+        echo '<pre>';
+        print_r($this->request->getGet());
+        exit;
+
+    }    
 
 }

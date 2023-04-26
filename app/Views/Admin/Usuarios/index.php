@@ -84,8 +84,7 @@
 
     $(function () {
 
-        $( "#query" ).autocomplete({
-
+        $("#query").autocomplete({
 
             source: function (request, response) {
 
@@ -110,7 +109,7 @@
                             
                         }
 
-                        response(data); // aqui temos valo no data 
+                        response(data); // aqui temos valor no data 
 
                     }, 
 
