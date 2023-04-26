@@ -9,7 +9,7 @@
 
 <!-- aqui enviamos para o template principal os estilos  -->
 
-<link rel="stylesheet" href="<?php echo site_url('admin/vendors/auto-complete/jquery-ui.css') ?>">
+<link rel="stylesheet" href="<?php echo site_url('admin/vendors/auto-complete/jquery-ui.css'); ?>">
 
 <?php echo $this->endSection(); ?>
 
@@ -65,13 +65,7 @@
 
 </div>
 
-
-
-
-
 <?php echo $this->endSection(); ?>
-
-
 
 
 <?php echo $this->section('scripts'); ?>
@@ -113,7 +107,6 @@
 
                     }, 
 
-
                 }); // fim ajax 
 
             },
@@ -128,7 +121,7 @@
                     
                 } else {
 
-                    window.location.href = '<?php echo site_url('admi/usuarios/show/'); ?>' + ui.item.id;
+                    window.location.href = '<?php echo site_url('admin/usuarios/show/'); ?>' + ui.item.id;
 
                 }
 
@@ -136,7 +129,7 @@
             
         });
 
-    })
+    });
 
 </script>
 

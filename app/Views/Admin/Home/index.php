@@ -23,7 +23,7 @@
 
 
 
-<?php echo $this->section('sxcripts'); ?>
+<?php echo $this->section('scripts'); ?>
 
 <!-- aqui enviamos para o template principal os scripts  -->
 

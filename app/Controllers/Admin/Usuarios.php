@@ -19,7 +19,7 @@ class Usuarios extends BaseController
     {
         $data = [
 
-            'titulo' => 'Usuarios',
+            'titulo' => 'Listando Usuarios',
             'usuarios' => $this->usuarioModel->findAll(),
 
         ];
@@ -45,9 +45,10 @@ class Usuarios extends BaseController
             $data['value'] = $usuario->nome;
 
             $retorno[] = $data;            
-        }
+        }    
+            
 
-        return $this->response->setJSON($retorno);
+        return $this->response->setJSON($retorno);        
 
     }    
 
