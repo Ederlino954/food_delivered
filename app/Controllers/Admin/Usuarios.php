@@ -56,7 +56,12 @@ class Usuarios extends BaseController
 
         $usuario = $this->buscaUsuarioOu404($id);
 
-        var_dump($usuario);
+        $data = [
+            'titulo' => "Detalhando o usuario: $usuario->nome",
+            'usuario' => $usuario,
+        ];
+
+        return view('Admin/Usuarios/show', $data);
 
     }
 
