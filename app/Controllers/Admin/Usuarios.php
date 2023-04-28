@@ -65,6 +65,19 @@ class Usuarios extends BaseController
 
     }
 
+    public function editar($id = null) {
+
+        $usuario = $this->buscaUsuarioOu404($id);       
+
+        $data = [
+            'titulo' => "Editando o usuario: $usuario->nome",
+            'usuario' => $usuario,
+        ];
+
+        return view('Admin/Usuarios/editar', $data);
+
+    }
+
     public function buscaUsuarioOu404(int $id = null) {
 
         if (!$id || !$usuario =  $this->usuarioModel->where('id', $id)->first() ) {

@@ -58,12 +58,15 @@
                 
                 <div class="mt-4">
                     <a href="<?php echo site_url("admin/usuarios/editar/$usuario->id"); ?>" class="btn btn-dark btn-sm mr-2">
+                        <i class="mdi mdi-pencil btn-icon-prepend"></i>
                         Editar
                     </a>
                     <a href="<?php echo site_url("admin/usuarios/excluir/$usuario->id"); ?>" class="btn btn-danger btn-sm mr-2">
+                    <i class="mdi mdi-trash-can btn-icon-prepend"></i>
                         Excluir
                     </a>
                     <a href="<?php echo site_url("admin/usuarios/"); ?>" class="btn btn-light text-dark btn-sm">
+                        <i class="mdi mdi-arrow-left btn-icon-prepend"></i>
                         voltar
                     </a>
                 </div>
