@@ -48,13 +48,9 @@
 
 <?php echo $this->endSection(); ?>
 
-
 <?php echo $this->section('scripts'); ?>
 
-<!-- aqui enviamos para o template principal os scripts  -->
-
-<script src="<?php echo site_url('admin/vendors/auto-complete/jquery-ui.js') ?>"></script>
-
-
+<script src="<?php echo site_url('admin/vendors/mask/jquery.mask.min.js') ?>"></script>
+<script src="<?php echo site_url('admin/vendors/mask/app.js') ?>"></script>
 
 <?php echo $this->endSection(); ?>
