@@ -2,22 +2,22 @@
 
     <div class="form-group col-md-4">
         <label for="nome">Nome</label>
-        <input type="text" class="form-control" name="nome" id="nome" value="<?php echo $usuario->nome; ?>">
+        <input type="text" class="form-control" name="nome" id="nome" value="<?php echo esc($usuario->nome); ?>">
     </div>
 
     <div class="form-group col-md-2">
         <label for="cpf">CPF</label>
-        <input type="text" class="form-control cpf" name="cpf" id="cpf" value="<?php echo $usuario->cpf; ?>">
+        <input type="text" class="form-control cpf" name="cpf" id="cpf" value="<?php echo esc($usuario->cpf); ?>">
     </div>
 
     <div class="form-group col-md-3">
         <label for="telefone">Telefone</label>
-        <input type="text" class="form-control sp_celphones" name="telefone" id="telefone" value="<?php echo $usuario->telefone; ?>">
+        <input type="text" class="form-control sp_celphones" name="telefone" id="telefone" value="<?php echo esc($usuario->telefone); ?>">
     </div>
 
     <div class="form-group col-md-3">
         <label for="email">Email</label>
-        <input type="text" class="form-control" name="email" id="email" value="<?php echo $usuario->email; ?>">
+        <input type="text" class="form-control" name="email" id="email" value="<?php echo esc($usuario->email); ?>">
     </div>
 
 </div>
@@ -31,7 +31,49 @@
 
     <div class="form-group col-md-3">
         <label for="confirmation_password">Confirmação de Senha</label>
-        <input type="password" class="form-control" name="confirmation_password" password id="confirmation_password">
+        <input type="password" class="form-control" name="password_confirmation" password id="confirmation_password">
+    </div>
+
+    <div class="form-group col-md-3">
+        <label for="email">Perfil de acesso</label>
+
+        <select class="form-control" name="is_admin" >
+
+        <?php if ($usuario->id): ?>
+
+            <option value="1"  <?php echo ($usuario->is_admin ? 'selected' : '' ); ?> >Administrador</option>
+            <option value="0"  <?php echo (!$usuario->is_admin ? 'selected' : '' ); ?> >Cliente</option>
+
+        <?php else: ?>
+
+            <option value="1">Sim</option>
+            <option value="0" selected="">Não</option>
+
+        <?php endif ?>
+
+        </select>
+        
+    </div>
+
+    <div class="form-group col-md-3">
+        <label for="email">Ativo</label>
+
+        <select class="form-control" name="ativo" >
+
+        <?php if ($usuario->id): ?>
+
+            <option value="1"  <?php echo ($usuario->ativo ? 'selected' : '' ); ?> >Sim</option>
+            <option value="0"  <?php echo (!$usuario->ativo ? 'selected' : '' ); ?> >Não</option>
+
+        <?php else: ?>
+
+            <option value="1">Sim</option>
+            <option value="0" selected="">Não</option>
+
+        <?php endif ?>
+
+        </select>
+        
     </div>
 
 </div>
