@@ -78,6 +78,34 @@ class Usuarios extends BaseController
 
     }
 
+    public function atualizar($id = null) {
+
+        // if ($this->request->getMethod() === 'post') { // DEPRECATED
+        //     # code...
+        // }
+
+        $request = service('request');
+
+        $method = $request->getMethod();
+
+        if ($method === 'post') {
+            
+            $usuario = $this->buscaUsuarioOu404($id);
+
+            $post = $this->request->getPost();
+
+            $usuario->fill($post);
+
+            dd($usuario);
+
+        } else {
+            
+            return redirect()->back();
+        }
+       
+
+    }
+
     public function buscaUsuarioOu404(int $id = null) {
 
         if (!$id || !$usuario =  $this->usuarioModel->where('id', $id)->first() ) {
