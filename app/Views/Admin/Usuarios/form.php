@@ -61,7 +61,4 @@
     <i class="mdi mdi-checkbox-marked-circle btn-icon-prepend"></i>
     Salvar
 </button>
-<a href="<?php echo site_url("admin/usuarios/show/$usuario->id"); ?>" class="btn btn-light text-dark btn-sm mr-2">
-    <i class="mdi mdi-arrow-left btn-icon-prepend"></i>
-    voltar
-</a>
+

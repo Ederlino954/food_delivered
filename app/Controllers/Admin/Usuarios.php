@@ -4,6 +4,8 @@ namespace App\Controllers\Admin;
 
 use App\Controllers\BaseController;
 
+use App\Entities\Usuario;
+
 class Usuarios extends BaseController
 {
 
@@ -50,8 +52,8 @@ class Usuarios extends BaseController
 
         return $this->response->setJSON($retorno);        
 
-    }   
-    
+    }
+
     public function show($id = null) {
 
         $usuario = $this->buscaUsuarioOu404($id);       
@@ -62,6 +64,51 @@ class Usuarios extends BaseController
         ];
 
         return view('Admin/Usuarios/show', $data);
+
+    }
+    
+    public function criar() {
+
+        $usuario = new Usuario();
+
+        $data = [
+            'titulo' => "Criando um novo usuario",
+            'usuario' => $usuario,
+        ];
+
+        return view('Admin/Usuarios/criar', $data);
+
+    }
+    
+    public function cadastrar() {
+
+        $request = service('request');
+
+        $method = $request->getMethod();
+
+        if ($method === 'post') {
+            
+            $usuario = new Usuario($this->request->getPost());
+
+            if ($this->usuarioModel->protect(false)->save($usuario)) {
+                
+                return redirect()->to(site_url("admin/usuarios/show/". $this->usuarioModel->getInsertID()))
+                                 ->with('sucesso',"usuario $usuario->nome cadastrado com sucesso!");
+                
+            } else {
+
+                return redirect()->back()
+                        ->with('errors_model', $this->usuarioModel->errors())
+                        ->with('atencao', 'Por favor verifique os erros abaixo')
+                        ->withInput();
+
+            }
+
+        } else {
+            
+            return redirect()->back();
+        }
+       
 
     }
 

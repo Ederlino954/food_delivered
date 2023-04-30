@@ -42,11 +42,11 @@
                 <?php endif ?>
 
 
-                <?php echo form_open("admin/usuarios/atualizar/$usuario->id"); ?>
+               <?php echo form_open("admin/usuarios/cadastrar"); ?>
 
                 <?php echo $this->include('Admin/Usuarios/form'); ?>
 
-                <a href="<?php echo site_url("admin/usuarios/show/$usuario->id"); ?>" class="btn btn-light text-dark btn-sm">
+                <a href="<?php echo site_url("admin/usuarios"); ?>" class="btn btn-light text-dark btn-sm">
                     <i class="mdi mdi-arrow-left btn-icon-prepend"></i>
                     voltar
                 </a>
