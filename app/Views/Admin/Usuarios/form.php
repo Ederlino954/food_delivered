@@ -31,7 +31,7 @@
 
     <div class="form-group col-md-3">
         <label for="confirmation_password">Confirmação de Senha</label>
-        <input type="password" class="form-control" name="password_confirmation" password id="confirmation_password">
+        <input type="password" class="form-control" name="password_comfirmation" password id="comfirmation_password">
     </div>
 
     <div class="form-group col-md-3">

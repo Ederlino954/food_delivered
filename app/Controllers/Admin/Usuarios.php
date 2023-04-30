@@ -80,10 +80,6 @@ class Usuarios extends BaseController
 
     public function atualizar($id = null) {
 
-        // if ($this->request->getMethod() === 'post') { // DEPRECATED
-        //     # code...
-        // }
-
         $request = service('request');
 
         $method = $request->getMethod();
@@ -94,9 +90,34 @@ class Usuarios extends BaseController
 
             $post = $this->request->getPost();
 
+            if (empty($post['password'])) {
+
+                $this->usuarioModel->desabilitaValidacaoSenha();
+                unset($post['password']);
+                unset($post['password_comfirmation']);
+
+            }
+
             $usuario->fill($post);
 
-            dd($usuario);
+            if (!$usuario->hasChanged()) {
+
+                return redirect()->back()->with('info', 'Não há dados para atualizar!');
+
+            }
+
+            if ($this->usuarioModel->protect(false)->save($usuario)) {
+                
+                return redirect()->to(site_url("admin/usuarios/show/$usuario->id"))
+                                 ->with('sucesso',"usuario $usuario->nome atualizado com sucesso!");
+                
+            } else {
+
+                return redirect()->back()
+                        ->with('errors_model', $this->usuarioModel->errors())
+                        ->with('atencao', 'Por favor corrija os erros');
+
+            }
 
         } else {
             

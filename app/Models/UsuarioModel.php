@@ -63,5 +63,12 @@ class UsuarioModel extends Model
                             ->getResult();
 
     }
+
+    public function desabilitaValidacaoSenha() {
+
+        unset($this->validationRules['password']);
+        unset($this->validationRules['password_comfirmation']);
+
+    }
     
 }
