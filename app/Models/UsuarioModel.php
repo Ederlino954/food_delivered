@@ -20,6 +20,7 @@ class UsuarioModel extends Model
         'nome'     => 'required|min_length[3]|max_length[120]',
         'email'    => 'required|valid_email|is_unique[usuarios.email]',
         'cpf'    => 'required|exact_length[14]|is_unique[usuarios.cpf]',
+        'telefone'    => 'required',
         'password' => 'required|min_length[6]',
         'password_comfirmation' => 'required_with[password]|matches[password]',
     ];
@@ -38,6 +39,9 @@ class UsuarioModel extends Model
             'required'   => 'O campo CPF é obrigatório.',
             'exact_length' => 'O campo CPF deve ter 14 caracteres.',
             'is_unique' => 'O campo CPF deve ser único.'
+        ],
+        'telefone'  => [
+            'required'   => 'O campo Telefone é obrigatório.',            
         ],
         'password' => [
             'required'   => 'O campo Senha é obrigatório.',
